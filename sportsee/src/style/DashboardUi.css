@@ -1,0 +1,16 @@
+.dashboard-body {
+    margin-left: 150px;
+}
+
+.dashboard-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 48px;
+    font-weight: 500;
+    width: 265px;
+}
+
+.name {
+    color: #FF0101
+}
