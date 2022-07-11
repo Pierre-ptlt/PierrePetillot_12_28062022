@@ -1,0 +1,23 @@
+.list-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+}
+
+.users-list {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.users-link {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(26, 25, 25);
+    border: solid 1px rgb(187, 187, 187);
+    background-color: rgb(231, 229, 229);
+    border-radius: 10px;
+}
