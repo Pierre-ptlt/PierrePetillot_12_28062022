@@ -24,9 +24,14 @@ function DashboardUi() {
 		<div className="App">
 			<Header />
 			<div className="dashboard-body">
-				<h1 className="dashboard-title">
-					Bonjour<p className="name">{name}</p>
-				</h1>
+				<div className="dashboard-header">
+					<h1 className="dashboard-title">
+						Bonjour<p className="name">{name}</p>
+					</h1>
+					<p className="intro">
+						Félicitation ! Vous avez explosé vos objectifs hier 👏
+					</p>
+				</div>
 				<Activity id={id} />
 			</div>
 			<LateralBar />

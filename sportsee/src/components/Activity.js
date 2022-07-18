@@ -30,16 +30,18 @@ function Activity(props) {
 
 	return (
 		<div className="activity">
+			<h2>Activité</h2>
 			<ResponsiveContainer
 				width="100%"
 				height="100%"
-				aspect={3}
+				aspect={3.5}
 				className="activity-graph-container"
 			>
 				<BarChart
 					className="avtivity-graph"
 					width={500}
 					height={300}
+					barGap={30}
 					data={data}
 					margin={{
 						top: 5,

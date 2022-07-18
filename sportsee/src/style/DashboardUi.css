@@ -9,9 +9,20 @@
     font-size: 48px;
     font-weight: 500;
     width: 265px;
+    margin-bottom: 0;
 }
 
 .name {
     margin-left: 10px;
     color: #FF0101
+}
+
+.intro {
+    margin-top: -15px;
+}
+
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
