@@ -1,0 +1,10 @@
+.activity-tooltip {
+    background-color: #e60000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 7px;
+    transform: translate(60%, -50%);
+}

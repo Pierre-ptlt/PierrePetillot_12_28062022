@@ -4,7 +4,6 @@ import { useState, PureComponent, useEffect } from "react";
 import {
 	BarChart,
 	Bar,
-	Cell,
 	XAxis,
 	YAxis,
 	CartesianGrid,
@@ -12,9 +11,12 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from "recharts";
+import CustomTooltip from "./CustomTooltip";
 
 function Activity(props) {
 	const [data, setData] = useState(null);
+	let calories = [];
+	let kilograms = [];
 
 	useEffect(() => {
 		getUserActivity(props.id)
@@ -26,7 +28,16 @@ function Activity(props) {
 			});
 	}, []);
 
-	console.log(data);
+	useEffect(() => {
+		if (data) {
+			data.forEach((session) => {
+				calories.push(session.calories);
+				kilograms.push(session.kilogram);
+			});
+		}
+	}, [data]);
+
+	console.log(kilograms, calories);
 
 	return (
 		<div className="activity">
@@ -34,14 +45,15 @@ function Activity(props) {
 			<ResponsiveContainer
 				width="100%"
 				height="100%"
-				aspect={3.5}
+				aspect={3}
 				className="activity-graph-container"
 			>
 				<BarChart
 					className="avtivity-graph"
 					width={500}
 					height={300}
-					barGap={30}
+					barGap={8}
+					barSize={7}
 					data={data}
 					margin={{
 						top: 5,
@@ -51,9 +63,16 @@ function Activity(props) {
 					}}
 				>
 					<CartesianGrid strokeDasharray="3 3" />
-					<XAxis dataKey="day" />
-					<YAxis dataKey="kilogram" />
-					<Tooltip />
+					<XAxis axisLine={false} tickLine={false} dataKey="day" />
+					<YAxis
+						dataKey="kilogram"
+						interval={"preserveEnd"}
+						orientation="right"
+						tickLine={false}
+						axisLine={false}
+						tickCount={4}
+					/>
+					<Tooltip content={<CustomTooltip />} />
 					<Legend />
 					<Bar dataKey="kilogram" fill="#282D30" />
 					<Bar dataKey="calories" fill="#E60000" />
