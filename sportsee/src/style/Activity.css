@@ -1,3 +1,7 @@
+ul {
+    list-style: none;
+}
+
 .activity-tooltip {
     background-color: #e60000;
     color: white;
@@ -8,3 +12,39 @@
     padding: 4px 7px;
     transform: translate(60%, -50%);
 }
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px 0px 20px;
+  }
+
+  .activity-title {
+    font-size: 15px;
+    font-weight: 530;
+  }
+
+  .activity-legend {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .activity-legend-item {
+    color: black
+  }
+
+  .activity-legend-item::before {
+    content: "\25CF";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: black; /* Change the color */
+    font-weight: bolder; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 3em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+  .item-red::before {
+    margin-left: 50px;
+    color: red;
+  }
