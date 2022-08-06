@@ -2,6 +2,10 @@ ul {
     list-style: none;
 }
 
+.activity {
+  background-color: rgb(245, 245, 245);
+}
+
 .activity-tooltip {
     background-color: #e60000;
     color: white;
@@ -47,4 +51,8 @@ ul {
   .item-red::before {
     margin-left: 50px;
     color: red;
+  }
+
+  .recharts-legend-wrapper {
+    display: none;
   }

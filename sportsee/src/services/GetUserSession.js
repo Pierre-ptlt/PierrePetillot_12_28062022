@@ -1,7 +1,7 @@
 import axios from "axios";
 
-function GetUserSession(id) {
-  return axios.get(`/user/${id}/average-sessions`);
+function getUserSession(id) {
+	return axios.get(`/user/${id}/average-sessions`);
 }
 
-export default GetUserSession;
+export default getUserSession;

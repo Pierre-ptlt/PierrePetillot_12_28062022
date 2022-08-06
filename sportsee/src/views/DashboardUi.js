@@ -6,6 +6,7 @@ import GetUserInfos from "../services/GetUserInfos";
 // import NotFound from "./404";
 import "../style/DashboardUi.css";
 import Activity from "../components/Activity";
+import AverageSession from "../components/AverageSession";
 
 function DashboardUi() {
 	const { id } = useParams();
@@ -32,7 +33,14 @@ function DashboardUi() {
 						Félicitation ! Vous avez explosé vos objectifs hier 👏
 					</p>
 				</div>
-				<Activity id={id} />
+				<div className="dashboard-content">
+					<div className="graphs-wrapper">
+						<Activity id={id} />
+						<div className="little-graphs">
+							<AverageSession id={id} />
+						</div>
+					</div>
+				</div>
 			</div>
 			<LateralBar />
 		</div>
