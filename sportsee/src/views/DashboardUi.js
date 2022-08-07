@@ -7,6 +7,7 @@ import GetUserInfos from "../services/GetUserInfos";
 import "../style/DashboardUi.css";
 import Activity from "../components/Activity";
 import AverageSession from "../components/AverageSession";
+import ActivityRadar from "../components/ActivityRadar";
 
 function DashboardUi() {
 	const { id } = useParams();
@@ -38,6 +39,7 @@ function DashboardUi() {
 						<Activity id={id} />
 						<div className="little-graphs">
 							<AverageSession id={id} />
+							<ActivityRadar id={id} />
 						</div>
 					</div>
 				</div>
