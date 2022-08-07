@@ -51,7 +51,7 @@ function ActivityRadar(props) {
 	return (
 		<div className="radar-wrapper">
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart outerRadius="60%" data={data}>
+				<RadarChart outerRadius="60%" data={data} margin={{ right: 25 }}>
 					<PolarGrid radialLines={false} d="" />
 					<PolarAngleAxis
 						dataKey={(data) => categories(data)}
