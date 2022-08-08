@@ -43,3 +43,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.user-wrapper {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 600px;
+}

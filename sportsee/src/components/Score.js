@@ -29,7 +29,6 @@ function Score(props) {
 		{ name: "incomplete", value: 1 - score, fillColor: "transparent" },
 	];
 
-	console.log(score);
 	return (
 		<div className="score-wrapper">
 			<h3 className="score-title">Score</h3>

@@ -9,6 +9,7 @@ import Activity from "../components/Activity";
 import AverageSession from "../components/AverageSession";
 import ActivityRadar from "../components/ActivityRadar";
 import Score from "../components/Score";
+import UserInfos from "../components/UserInfos";
 
 function DashboardUi() {
 	const { id } = useParams();
@@ -43,6 +44,9 @@ function DashboardUi() {
 							<ActivityRadar id={id} />
 							<Score id={id} />
 						</div>
+					</div>
+					<div className="user-wrapper">
+						<UserInfos id={id} />
 					</div>
 				</div>
 			</div>
