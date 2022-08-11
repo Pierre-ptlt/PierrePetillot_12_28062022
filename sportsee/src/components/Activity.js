@@ -1,4 +1,4 @@
-import getUserActivity from "../services/GetUserActivity";
+import getData from "../services/GetData";
 import "../style/Activity.css";
 import { useState, useEffect } from "react";
 import {
@@ -23,7 +23,7 @@ function Activity(props) {
 	const [maxKg, setMaxKg] = useState(0);
 
 	useEffect(() => {
-		getUserActivity(props.id)
+		getData(props.id, "activity")
 			.then((res) => {
 				setData(res.data.data.sessions);
 			})

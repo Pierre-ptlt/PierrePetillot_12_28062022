@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "../style/AverageSession.css";
-import getUserSession from "../services/GetUserSession";
+import getData from "../services/GetData";
 import {
 	LineChart,
 	Line,
 	XAxis,
 	YAxis,
-	CartesianGrid,
 	Tooltip,
 	Legend,
 	ResponsiveContainer,
@@ -29,7 +28,7 @@ function AverageSession(props) {
 	};
 
 	useEffect(() => {
-		getUserSession(props.id)
+		getData(props.id, "average-sessions")
 			.then((res) => {
 				setData(res.data.data.sessions);
 			})

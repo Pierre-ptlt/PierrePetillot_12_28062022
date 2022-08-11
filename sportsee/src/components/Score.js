@@ -1,5 +1,5 @@
 import "../style/Score.css";
-import getUserInfos from "../services/GetUserInfos";
+import getData from "../services/GetData";
 import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
@@ -9,7 +9,7 @@ function Score(props) {
 	const innerPie = [{ value: 100 }];
 
 	useEffect(() => {
-		getUserInfos(props.id)
+		getData(props.id)
 			.then((res) => {
 				setData(res.data.data);
 			})

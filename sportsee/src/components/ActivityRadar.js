@@ -1,5 +1,5 @@
 import "../style/ActivityRadar.css";
-import getUserPerformance from "../services/GetUserPerformance";
+import getData from "../services/GetData";
 import {
 	Radar,
 	RadarChart,
@@ -13,7 +13,7 @@ function ActivityRadar(props) {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
-		getUserPerformance(props.id)
+		getData(props.id, "performance")
 			.then((res) => {
 				setData(res.data.data.data);
 			})

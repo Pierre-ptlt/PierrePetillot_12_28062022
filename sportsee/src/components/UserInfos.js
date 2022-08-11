@@ -1,6 +1,6 @@
 import "../style/UserInfos.css";
 import UserInfosItem from "./UserInfosItem";
-import getUserInfos from "../services/GetUserInfos";
+import getUserInfos from "../services/GetData";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -16,13 +16,6 @@ function UserInfos(props) {
 				console.log(err);
 			});
 	}, []);
-
-	console.log(data);
-	// useEffect(() => {
-	//     if (data) {
-	//         console.log(data);
-	//     }
-	// }, [data]);
 
 	if (data) {
 		return (

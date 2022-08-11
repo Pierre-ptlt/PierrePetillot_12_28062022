@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import LateralBar from "../components/LateralBar";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import GetUserInfos from "../services/GetUserInfos";
+import GetUserInfos from "../services/GetData";
 // import NotFound from "./404";
 import "../style/DashboardUi.css";
 import Activity from "../components/Activity";
