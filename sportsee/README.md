@@ -4,7 +4,7 @@
 
 - [NodeJS (**version 12.18**)](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
-- [NPM] (https://www.npmjs.com/)
+- [NPM](https://www.npmjs.com/)
 
 ## Installation
 
