@@ -1,6 +1,6 @@
 .score-wrapper {
-    width: 250px;
-    height: 250px;
+    width: 30%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
