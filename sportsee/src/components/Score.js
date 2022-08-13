@@ -1,4 +1,5 @@
 import "../style/Score.css";
+import mockData from "../services/MockData";
 import getData from "../services/GetData";
 import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
@@ -7,6 +8,9 @@ function Score(props) {
 	const [data, setData] = useState(null);
 	const [score, setScore] = useState(0);
 	const innerPie = [{ value: 100 }];
+	const filtered = mockData.USER_MAIN_DATA.filter(
+		(item) => item.id == props.id
+	);
 
 	useEffect(() => {
 		getData(props.id)
@@ -14,6 +18,7 @@ function Score(props) {
 				setData(res.data.data);
 			})
 			.catch((err) => {
+				setData(filtered[0]);
 				console.log(err);
 			});
 	}, []);

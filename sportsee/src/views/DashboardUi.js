@@ -3,7 +3,7 @@ import LateralBar from "../components/LateralBar";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GetUserInfos from "../services/GetData";
-// import NotFound from "./404";
+import mockData from "../services/MockData";
 import "../style/DashboardUi.css";
 import Activity from "../components/Activity";
 import AverageSession from "../components/AverageSession";
@@ -14,6 +14,7 @@ import UserInfos from "../components/UserInfos";
 function DashboardUi() {
 	const { id } = useParams();
 	const [name, setName] = useState("");
+	const filtered = mockData.USER_MAIN_DATA.filter((item) => item.id == id);
 
 	useEffect(() => {
 		GetUserInfos(id)
@@ -21,6 +22,7 @@ function DashboardUi() {
 				setName(res.data.data.userInfos.firstName);
 			})
 			.catch((err) => {
+				setName(filtered[0].userInfos.firstName);
 				console.log(err);
 			});
 	}, [id]);

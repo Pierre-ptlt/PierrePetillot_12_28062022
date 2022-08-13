@@ -1,5 +1,6 @@
 import "../style/ActivityRadar.css";
 import getData from "../services/GetData";
+import mockData from "../services/MockData";
 import {
 	Radar,
 	RadarChart,
@@ -11,6 +12,9 @@ import { useEffect, useState } from "react";
 
 function ActivityRadar(props) {
 	const [data, setData] = useState(null);
+	const filtered = mockData.USER_PERFORMANCE.filter(
+		(item) => item.userId == props.id
+	);
 
 	useEffect(() => {
 		getData(props.id, "performance")
@@ -18,6 +22,7 @@ function ActivityRadar(props) {
 				setData(res.data.data.data);
 			})
 			.catch((err) => {
+				setData(filtered[0].data);
 				console.log(err);
 			});
 	}, []);

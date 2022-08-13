@@ -1,11 +1,15 @@
 import "../style/UserInfos.css";
 import UserInfosItem from "./UserInfosItem";
+import mockData from "../services/MockData";
 import getUserInfos from "../services/GetData";
 import { useEffect } from "react";
 import { useState } from "react";
 
 function UserInfos(props) {
 	const [data, setData] = useState(null);
+	const filtered = mockData.USER_MAIN_DATA.filter(
+		(item) => item.id == props.id
+	);
 
 	useEffect(() => {
 		getUserInfos(props.id)
@@ -13,6 +17,7 @@ function UserInfos(props) {
 				setData(res.data.data.keyData);
 			})
 			.catch((err) => {
+				setData(filtered[0].keyData);
 				console.log(err);
 			});
 	}, []);

@@ -1,5 +1,6 @@
 import getData from "../services/GetData";
 import "../style/Activity.css";
+import mockData from "../services/MockData";
 import { useState, useEffect } from "react";
 import {
 	BarChart,
@@ -21,13 +22,19 @@ function Activity(props) {
 	const [maxCal, setMaxCal] = useState(0);
 	const [minKg, setMinKg] = useState(0);
 	const [maxKg, setMaxKg] = useState(0);
+	const filtered = mockData.USER_ACTIVITY.filter(
+		(item) => item.userId == props.id
+	);
 
 	useEffect(() => {
 		getData(props.id, "activity")
 			.then((res) => {
-				setData(res.data.data.sessions);
+				if (res.status === 200) {
+					setData(res.data.data.sessions);
+				}
 			})
 			.catch((err) => {
+				setData(filtered[0].sessions);
 				console.log(err);
 			});
 	}, []);

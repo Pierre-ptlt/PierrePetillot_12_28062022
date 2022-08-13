@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import mockData from "../services/MockData";
 import "../style/AverageSession.css";
 import getData from "../services/GetData";
 import {
@@ -15,6 +16,9 @@ function AverageSession(props) {
 	const [data, setData] = useState(null);
 	const [length, setLength] = useState(null);
 	const [maxLength, setMaxLength] = useState(0);
+	const filtered = mockData.USER_AVERAGE_SESSIONS.filter(
+		(item) => item.userId == props.id
+	);
 
 	const customTooltip = ({ active, payload }) => {
 		if (active && payload && payload.length) {
@@ -33,6 +37,7 @@ function AverageSession(props) {
 				setData(res.data.data.sessions);
 			})
 			.catch((err) => {
+				setData(filtered[0].sessions);
 				console.log(err);
 			});
 	}, []);
