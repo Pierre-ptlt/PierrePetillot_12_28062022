@@ -4,6 +4,12 @@ import getData from "../services/GetData";
 import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
+/**
+ *
+ * @param {int} props.id - user id
+ * @returns the score chart
+ */
+
 function Score(props) {
 	const [data, setData] = useState(null);
 	const [score, setScore] = useState(0);
@@ -12,6 +18,7 @@ function Score(props) {
 		(item) => item.id == props.id
 	);
 
+	// data recuperation
 	useEffect(() => {
 		getData(props.id)
 			.then((res) => {
@@ -23,17 +30,20 @@ function Score(props) {
 			});
 	}, []);
 
+	// recuperating the score
 	useEffect(() => {
 		if (data) {
 			setScore(data.score || data.todayScore);
 		}
 	}, [data]);
 
+	// setting the chart parameteers
 	const completion = [
 		{ name: "completed", value: score, fillColor: `#FF0000` },
 		{ name: "incomplete", value: 1 - score, fillColor: "transparent" },
 	];
 
+	// render
 	return (
 		<div className="score-wrapper">
 			<h3 className="score-title">Score</h3>

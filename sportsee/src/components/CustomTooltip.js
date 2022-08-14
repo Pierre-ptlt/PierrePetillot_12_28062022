@@ -1,3 +1,9 @@
+/**
+ * Custom tooltip for the activity graph
+ * @param {Object} props - props passed from the graph
+ * @return {Object} - custom tooltip
+ */
+
 function CustomTooltip(props) {
 	const { payload, active } = props;
 	if (active && payload && payload.length) {

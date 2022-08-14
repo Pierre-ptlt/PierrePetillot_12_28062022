@@ -12,7 +12,14 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from "recharts";
+
 import CustomTooltip from "./CustomTooltip";
+
+/**
+ *
+ * @param {int} props.id - id de l'utilisateur
+ * @returns the activity chart
+ */
 
 function Activity(props) {
 	const [data, setData] = useState(null);
@@ -26,6 +33,7 @@ function Activity(props) {
 		(item) => item.userId == props.id
 	);
 
+	// data recuperation
 	useEffect(() => {
 		getData(props.id, "activity")
 			.then((res) => {
@@ -39,6 +47,7 @@ function Activity(props) {
 			});
 	}, []);
 
+	// setting the min and max values for the calories and kilograms to display the graph
 	useEffect(() => {
 		if (data) {
 			data.forEach((session) => {
@@ -52,6 +61,7 @@ function Activity(props) {
 		}
 	}, [data]);
 
+	// render
 	return (
 		<div className="activity">
 			<div className="activity-header">

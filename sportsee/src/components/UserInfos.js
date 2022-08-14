@@ -5,12 +5,19 @@ import getUserInfos from "../services/GetData";
 import { useEffect } from "react";
 import { useState } from "react";
 
+/**
+ *
+ * @param {int} props.id - user id
+ * @returns the infos components
+ */
+
 function UserInfos(props) {
 	const [data, setData] = useState(null);
 	const filtered = mockData.USER_MAIN_DATA.filter(
 		(item) => item.id == props.id
 	);
 
+	// data recuperation
 	useEffect(() => {
 		getUserInfos(props.id)
 			.then((res) => {
@@ -22,6 +29,7 @@ function UserInfos(props) {
 			});
 	}, []);
 
+	// render
 	if (data) {
 		return (
 			<div className="user-infos-wrapper">

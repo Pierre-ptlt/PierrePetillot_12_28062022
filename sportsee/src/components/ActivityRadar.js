@@ -10,12 +10,19 @@ import {
 } from "recharts";
 import { useEffect, useState } from "react";
 
+/**
+ *
+ * @param {int} props.id - id de l'utilisateur
+ * @returns the activity radar chart
+ */
+
 function ActivityRadar(props) {
 	const [data, setData] = useState(null);
 	const filtered = mockData.USER_PERFORMANCE.filter(
 		(item) => item.userId == props.id
 	);
 
+	// data recuperation
 	useEffect(() => {
 		getData(props.id, "performance")
 			.then((res) => {
@@ -27,6 +34,7 @@ function ActivityRadar(props) {
 			});
 	}, []);
 
+	// assigning the names corresponding to the kind number
 	const categories = (data) => {
 		switch (data.kind) {
 			case 1:
@@ -53,6 +61,7 @@ function ActivityRadar(props) {
 		}
 	};
 
+	//render
 	return (
 		<div className="radar-wrapper">
 			<ResponsiveContainer width="100%" height="100%">

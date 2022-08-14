@@ -3,7 +3,14 @@ import { GoFlame } from "react-icons/go";
 import { GiChickenLeg } from "react-icons/gi";
 import { FaAppleAlt, FaHamburger } from "react-icons/fa";
 
+/**
+ *
+ * @param {object} data including type and value
+ * @returns the infos component
+ */
+
 function UserInfosItem(props) {
+	// setting the icon fitting to the type
 	const icon =
 		props.number === "1" ? (
 			<GoFlame />
@@ -15,6 +22,7 @@ function UserInfosItem(props) {
 			<FaHamburger />
 		);
 
+	// styling the component corresponding to the type
 	const backgroundColor =
 		props.number === "1"
 			? "rgb(255, 194, 194)"
@@ -41,8 +49,10 @@ function UserInfosItem(props) {
 			? "Glucides"
 			: "Lipides";
 
+	// formatting the value
 	const unit = props.number === "1" ? "kCal" : "g";
 
+	//render
 	return (
 		<div className="user-infos-item">
 			<div

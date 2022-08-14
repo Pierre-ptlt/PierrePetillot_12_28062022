@@ -11,11 +11,17 @@ import ActivityRadar from "../components/ActivityRadar";
 import Score from "../components/Score";
 import UserInfos from "../components/UserInfos";
 
+/**
+ * @params none
+ * @returns the dashboard ui
+ */
+
 function DashboardUi() {
 	const { id } = useParams();
 	const [name, setName] = useState("");
 	const filtered = mockData.USER_MAIN_DATA.filter((item) => item.id == id);
 
+	// data recuperation
 	useEffect(() => {
 		GetUserInfos(id)
 			.then((res) => {
@@ -26,6 +32,8 @@ function DashboardUi() {
 				console.log(err);
 			});
 	}, [id]);
+
+	//render
 	return (
 		<div className="App">
 			<Header />
