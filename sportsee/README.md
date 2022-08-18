@@ -24,6 +24,6 @@
 
 3- Start the backend server by running `yarn dev`. The server will run on port 3000.
 
-4- In the second tab, start the app by running `npm start`. It will run on port 3001.
+4- In the second tab, start the app by running `npm start`, then pressing `y`. It will run on port 3001.
 
 5- You can interact with the app by navitaging to http://localhost:3001 into your folder.
